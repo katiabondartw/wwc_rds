@@ -17,13 +17,6 @@ Username: wwc
 
 Password: Generic1
 
-
-### Configure connection
-Run SQL query:
-`SET default_text_search_config = "pg_catalog.english";`
-
-If a connection drops, this query needs to be executed again. Otherwise the results of some queries may vary.
-
 ## Verify the database connection is read-only
 
 ### See the initial value in the first raw
@@ -40,8 +33,11 @@ If a connection drops, this query needs to be executed again. Otherwise the resu
 The following are the queries which will be demonstrated during the demo. You can also execute them from your laptop:
 ### ILIKE
 `SELECT * FROM products WHERE title ILIKE 'fair'`
+
 `SELECT * FROM products WHERE title ILIKE 'fair%'`
+
 `SELECT * FROM products WHERE title ILIKE '%fair%'`
+
 `SELECT * FROM products WHERE title ILIKE '%fair%' OR description ILIKE '%fair%'`
 
 #### Measure execution time / see query plan
