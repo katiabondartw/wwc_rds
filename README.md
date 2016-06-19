@@ -24,6 +24,18 @@ Run SQL query:
 
 If a connection drops, this query needs to be executed again. Otherwise the results of some queries may vary.
 
+## Verify the database connection is read-only
+
+### See the initial value in the first raw
+`SELECT * FROM products WHERE id=1`
+
+### See the updated value in the first raw after mofification done by presenter
+`SELECT * FROM products WHERE id=1`
+
+### Try and modify the first raw and see the error message
+`UPDATE products SET description='illegal modification' WHERE id=1`
+
+
 ## Follow the demo
 The following are the queries which will be demonstrated during the demo. You can also execute them from your laptop:
 ### ILIKE
