@@ -3,10 +3,13 @@
 ## Before the workshop
 - install [pgAdmin](https://www.pgadmin.org/download/)
 - refresh knowledge in basic SQL:
+
 [SQL SELECT statement](http://www.w3schools.com/sql/sql_select.asp)
+
+
 [Indexes](http://postgresguide.com/performance/indexes.html)
 
-## Set up connection
+## Set up connection to RDS read replica instance
 ### Create connection:
 
 Host: TBC
@@ -43,7 +46,7 @@ The following are the queries which will be demonstrated during the demo. You ca
 #### Measure execution time / see query plan
 `EXPLAIN ANALYZE SELECT * FROM products WHERE title ILIKE '%fair%' OR description ILIKE '%fair%'`
 
-### Use full text search
+### Full text search
 `SELECT * FROM products
 WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english', 'english', 'fair')`
 
