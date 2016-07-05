@@ -1,4 +1,4 @@
-# PostgreSQL Full Text Search on AWS RDS
+# Database Full Text Search with AWS RDS
 
 ## Before the workshop
 - install [pgAdmin](https://www.pgadmin.org/download/)
@@ -25,15 +25,15 @@ Password: Generic1
 ### See the initial value in the first raw
 `SELECT * FROM products WHERE id=1`
 
-### See the updated value in the first raw after mofification done by presenter
+### See the updated value in the first raw after mofification done by the presenter
 `SELECT * FROM products WHERE id=1`
 
-### Try and modify the first raw and see the error message
+### Try to update the first raw and see the error message
 `UPDATE products SET description='illegal modification' WHERE id=1`
 
 
 ## Follow the demo
-The following are the queries which will be demonstrated during the demo. You can also execute them from your laptop:
+The following are the queries which will be demonstrated during the demo. You can execute them from your laptop:
 ### ILIKE
 `SELECT * FROM products WHERE title ILIKE 'fair'`
 
@@ -55,7 +55,7 @@ WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english
 WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english', 'fair')`
 
 ## Self-paced exercises
-### Full text options
+### Full text search options
 1. Subword: `:*`, e.g. `to_tsquery('english', 'cat:*')`
 2. Two and more words to be found: `&`, e.g. `to_tsquery('english', 'cat & dog')`
 3. One of the given words to be found: `|`, e.g. `to_tsquery('english', 'cat | dog')`
