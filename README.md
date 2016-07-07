@@ -61,17 +61,27 @@ WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english
 3. One of the given words to be found: `|`, e.g. `to_tsquery('english', 'cat | dog')`
 4. Rows with the given word to be excluded: `!`, e.g. `to_tsquery('english', '!black & cat')`
 
-### Exercise 1
+### Exercise 1 - AND conidtion
 Find records with both words "cat" and "adaptive" in either title or description.
 
-### Exercise 2
+### Exercise 2 - Subwords
 Find all records which have words starting with "bot" in title only.
 
-### Exercise 3
+### Exercise 3 - Exclude
 Find records containing the word "machine", but not containing "gift" in either title or description. 
 
-### Exercise 4
+### Exercise 4 - Stemming
 Explore the stem of the word "programming" (`select to_tsvector('english', 'programming')`) and find records with this word's form in the products table.
+
+### Exercise 5 - Stop words
+Stop words are words that are very common, appear in almost every document, and have no discrimination value. Therefore, they can be ignored in the context of full text searching. For example, every English text contains words like a and the, so it is useless to store them in an index.
+#### 5.1
+- Find all records starting with the word "the" (not subword!) in description using ILIKE
+- Check this word is ignored when searching with full text search
+
+#### 5.2
+- Find all records containing the word "will" (not subword!) in description using ILIKE
+- Check this word is ignored when searching with full text search
 
 ## Further reading
 - [Controlling text search](https://www.postgresql.org/docs/8.3/static/textsearch-controls.html)
