@@ -48,7 +48,7 @@ The following are the queries which will be demonstrated during the demo. You ca
 
 ### Full text search
 `SELECT * FROM products
-WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english', 'english', 'fair')`
+WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english', 'fair')`
 
 #### Measure execution time / see query plan
 `EXPLAIN ANALYZE SELECT * FROM products
