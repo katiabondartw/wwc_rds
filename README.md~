@@ -84,5 +84,6 @@ The words "the" and "will" are included into the stop words list. For both of th
 Read about PostgreSQL full text search ranking at https://www.postgresql.org/docs/9.1/static/textsearch-controls.html#TEXTSEARCH-RANKING.
 
 ## Further reading
+- [Controlling text search](https://www.postgresql.org/docs/8.3/static/textsearch-controls.html)
 - [Other features and hints on PostgreSQL](http://postgresguide.com/)
 - [PostgreSQL AWS RDS](https://aws.amazon.com/rds/postgresql/)
