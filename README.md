@@ -85,8 +85,11 @@ Stop words are words that are very common, appear in almost every document, and 
 The words "the" and "will" are included into the stop words list. For both "the" and "will" do the following:
 
 - Find all records starting with this word (not subword!) in description using ILIKE
+
 Expected result: 1 row for both words
+
 - Check this word is ignored when searching with full text search
+
 Expected result: 0 rows for both words
 
 ### Exercise 6 - Ranking
