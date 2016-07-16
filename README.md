@@ -41,9 +41,6 @@ The following are the queries which will be demonstrated during the demo. You ca
 
 `SELECT * FROM products WHERE title ILIKE '%fair%' OR description ILIKE '%fair%'`
 
-#### Measure execution time / see query plan
-`EXPLAIN ANALYZE SELECT * FROM products WHERE title ILIKE '%fair%' OR description ILIKE '%fair%'`
-
 ### Full text search
 `SELECT * FROM products
 WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english', 'fair')`
@@ -62,23 +59,35 @@ WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english
 ### Exercise 1 - AND conidtion
 Find records with both words "cat" and "adaptive" in either title or description.
 
+Expected result: 16 rows
+
 ### Exercise 2 - Subwords
-Find all records which have words starting with "bot" in title only.
+Find all records which have words starting with "bot" in the title.
+
+Expected result: 8 rows
 
 ### Exercise 3 - Exclude
 Find records containing the word "machine", but not containing "gift" in either title or description. 
 
+Expected result: 2 rows
+
 ### Exercise 4 - Stemming
-Executing the query to find out the stem of the word "programming":
+Execute the query to find out the stem of the word "programming":
+
 `select to_tsvector('english', 'programming')`
+
 Then perform full text search with this word as a search phrase to see all the matching forms of this word.
+
+Expected result: 4 rows, 2 forms of the word "program"
 
 ### Exercise 5 - Stop words
 Stop words are words that are very common, appear in almost every document, and have no discrimination value. Therefore, they can be ignored in the context of full text searching. For example, every English text contains words like a and the, so it is useless to store them in an index.
-The words "the" and "will" are included into the stop words list. For both of them do the following:
+The words "the" and "will" are included into the stop words list. For both "the" and "will" do the following:
 
-- Find all records starting with the word "the" (not subword!) in description using ILIKE
+- Find all records starting with this word (not subword!) in description using ILIKE
+Expected result: 1 row for both words
 - Check this word is ignored when searching with full text search
+Expected result: 0 rows for both words
 
 ### Exercise 6 - Ranking
 Read about PostgreSQL full text search ranking at https://www.postgresql.org/docs/9.1/static/textsearch-controls.html#TEXTSEARCH-RANKING.
