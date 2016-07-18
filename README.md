@@ -12,7 +12,7 @@
 ## Set up connection to RDS read replica instance
 ### Create connection:
 
-Host: TBC
+Host: wwc-workshop-read.cjfbgrnzzler.ap-southeast-2.rds.amazonaws.com
 
 Port: 5432 (default)
 
