@@ -56,7 +56,7 @@ WHERE to_tsvector('english', title || ' ' || description) @@ to_tsquery('english
 3. One of the given words to be found: `|`, e.g. `to_tsquery('english', 'cat | dog')`
 4. Rows with the given word to be excluded: `!`, e.g. `to_tsquery('english', '!black & cat')`
 
-### Exercise 1 - AND conidtion
+### Exercise 1 - AND condition
 Find records with both words "cat" and "adaptive" in either title or description.
 
 Expected result: 16 rows
