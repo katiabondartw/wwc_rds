@@ -97,5 +97,6 @@ Read about PostgreSQL full text search ranking at https://www.postgresql.org/doc
 
 ## Further reading
 - [PostgreSQL Full Text Search](https://www.postgresql.org/docs/9.1/static/textsearch-intro.html)
+- [PostgreSQL Full Text Search-Dictionaries](https://www.postgresql.org/docs/9.1/static/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS)
 - [Other features and hints on PostgreSQL](http://postgresguide.com/)
 - [PostgreSQL AWS RDS](https://aws.amazon.com/rds/postgresql/)
