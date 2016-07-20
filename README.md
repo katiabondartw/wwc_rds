@@ -81,14 +81,14 @@ Then perform full text search with this word as a search phrase to see all the m
 Expected result: 4 rows, 2 forms of the word "program"
 
 ### Exercise 5 - Stop words
-Stop words are words that are very common, appear in almost every document, and have no discrimination value. Therefore, they can be ignored in the context of full text searching. For example, every English text contains words like a and the, so it is useless to store them in an index.
+Stop words is one of predefined dictionaries(a list of words) for many languages provided by postgreSQL. Stop words are words that are very common, appear in almost every document, and have no discrimination value. Therefore, they can be ignored in the context of full text searching. For example, every English text contains words like a and the, so it is useless to store them in an index.
 The words "the" and "will" are included into the stop words list. For both "the" and "will" do the following:
 
-- Find all records starting with this word (not subword!) in description using ILIKE
+- Find all records starting with "the" and "will" (not using subword!) in description using ILIKE
 
-Expected result: 1 row for both words
+Expected result: 1 row for both words(therefore we know there is record contain words "the" and "will")
 
-- Check this word is ignored when searching with full text search
+- When searching with full text search SQL, these two words are ignored.
 
 Expected result: 0 rows for both words
 
@@ -97,5 +97,6 @@ Read about PostgreSQL full text search ranking at https://www.postgresql.org/doc
 
 ## Further reading
 - [PostgreSQL Full Text Search](https://www.postgresql.org/docs/9.1/static/textsearch-intro.html)
+- [PostgreSQL Full Text Search-Dictionaries](https://www.postgresql.org/docs/9.1/static/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS)
 - [Other features and hints on PostgreSQL](http://postgresguide.com/)
 - [PostgreSQL AWS RDS](https://aws.amazon.com/rds/postgresql/)
